@@ -24,10 +24,9 @@ async def chat(websocket):
     try:
         USERS.add(websocket)
         websockets.broadcast(USERS, users_event())
-        # Send current state to user
+        
         await websocket.send(value_event())
        
-        # Manage state changes
         async for message in websocket:
             event = json.loads(message)
             if event["action"] == "minus":
@@ -42,14 +41,13 @@ async def chat(websocket):
             else:
                 logging.error("unsupported event: %s", event)
     finally:
-        # Unregister user
         USERS.remove(websocket)
         websockets.broadcast(USERS, users_event())
         
 
 async def main():
     async with websockets.serve(chat, "localhost", 6789):
-        await asyncio.Future()  # run forever
+        await asyncio.Future() 
     
 
 if __name__ == "__main__":
