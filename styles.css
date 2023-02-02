@@ -1,0 +1,67 @@
+body {
+    font-family: "Courier New", sans-serif;
+    text-align: center;
+}
+
+.buttons {
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+}
+
+.button,
+.value {
+    line-height: 1;
+    padding: 2rem;
+    margin: 2rem;
+    border: medium solid;
+    min-height: 1em;
+    min-width: 1em;
+}
+
+.button {
+    cursor: pointer;
+    user-select: none;
+}
+
+.minus {
+    color: red;
+}
+
+.plus {
+    color: green;
+}
+
+.value {
+    min-width: 2em;
+}
+
+.state {
+    font-size: 2em;
+}
+
+#chat-window {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    text-align: start;
+}
+
+#chat-window ul {
+    list-style-type: none;
+}
+
+#message-form, #nome-form {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+}
+
+#message-form input, #nome-form input {
+    flex: 1;
+}
